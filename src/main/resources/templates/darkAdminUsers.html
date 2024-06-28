@@ -1,0 +1,25 @@
+
+
+<div th:insert="menu">
+
+</div>
+<h1 th:text="${message}"></h1>
+<div><span class="dark">DARK</span> admin Page</div>
+<table>
+    <thead>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Iban</th>
+        <th>Balance</th>
+        <th>H4cKing</th>
+    </thead>
+    <tr th:each="user: ${users}" >
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.iban}">Iban</td>
+        <td th:text="${user.balance}">Iban</td>
+        <td>
+            <a type="button" th:href="@{/doDarkTransaction(user=${user.name})}">Prise de 100</a>
+        </td>
+    </tr>
+</table>

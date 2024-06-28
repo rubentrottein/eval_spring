@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    text-decoration: none;
+}
+body{
+    background: radial-gradient(#110,#000 );
+    color: lime;
+    font-family: monospace;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+a{
+    color: mediumvioletred;
+    padding: .5em;
+    margin: 1em;
+    outline: 1px darkviolet solid;
+    display: block;
+}
+a[href="/darkadmin"]{
+    color: crimson;
+    border-color: crimson;
+    box-shadow: 0 0 15px darkred;
+}
+table, th, td {
+    border: lime 1px solid;
+    border-collapse: collapse;
+}
+table{
+    margin: 4em auto;
+    width: 50%;
+}
+td{
+    padding: 1em;
+    width: 10em;
+    text-align: center;
+}
+[type=button]{
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+    background: none;
+    border: 1px solid crimson;
+    border-radius: .5em;
+    color: tomato;
+}
+.dark {
+    background: black;
+    padding: .5em;
+    color: crimson;
+}
