@@ -12,6 +12,7 @@ import java.util.List;
 @Service
 public class DarkTransactionService {
 	int StolenMoney = 0;
+	int Michiefs = 0;
 
 	@Autowired
 	UserService userService;
@@ -22,14 +23,21 @@ public class DarkTransactionService {
 	public String createDarkTransaction(String userName){
 		User darkUser = userService.getUserByName("DarKUseR");
 		User user = userService.getUserByName(userName);
-		user.setBalance(user.getBalance()-100);
 
-		darkUser.setBalance(darkUser.getBalance() + 100);
-		user.setBalance(user.getBalance()-100);
-		userRepository.save(user);
-		userRepository.save(darkUser);
-		StolenMoney += 100;
+		if((user.getBalance()- 100) >0){
+			user.setBalance(user.getBalance()-100);
 
-		return "Méfait Accompli! Somme totale : " + StolenMoney;
+			darkUser.setBalance(darkUser.getBalance() + 100);
+			user.setBalance(user.getBalance()-100);
+			userRepository.save(user);
+			userRepository.save(darkUser);
+			StolenMoney += 100;
+			Michiefs++;
+
+			return "Méfait Accompli! (nombre de vols : " + Michiefs + " ), Somme totale : " + StolenMoney;
+		} else {
+
+			return "Gourmand, La moulah n'est pas infinie! " + user.getName() + " n'a plus sur son compte que " + user.getBalance();
+		}
 	}
 }

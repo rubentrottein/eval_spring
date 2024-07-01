@@ -51,12 +51,4 @@ public class VirementController {
 
 	//.Il faudra créer et sauvegarger un objet de type virement avec les infos du formulaire.
 	//.Il faudra éditer et sauvegarder l'amount du user.
-	@GetMapping("/darkvirements")
-	public String getDarkVirementsPage(Model model) {
-		String userName = SecurityContextHolder.getContext().getAuthentication().getName();
-
-		model.addAttribute("virements", virementService.getVirementListByUserName(userName));
-		model.addAttribute("virement", new Virement());
-		return "darkVirementsPage";
-	}
 }

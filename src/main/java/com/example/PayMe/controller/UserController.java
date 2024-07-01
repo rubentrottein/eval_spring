@@ -66,16 +66,5 @@ public class UserController {
 	public String getUsersDarkAdmin(Model model, RedirectAttributes ra){
 		model.addAttribute("users", userService.getAllUser());
 		return "darkAdminUsers";
-		/*String role = SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString();
-		if(role.contains("ROLE_ADMIN")){
-			model.addAttribute("users", userService.getAllUser());
-			return "adminUsers" ;
-		}else{
-			ra.addFlashAttribute("error", "vous n'etes pas admin");
-			return "home";
-		}*/
-
-
 	}
-	
 }

@@ -22,7 +22,7 @@ public class SpringSecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		return http.authorizeHttpRequests(auth -> {
 			auth.requestMatchers("/").permitAll();
-			auth.requestMatchers("/dark_admin").hasRole("DARK_ADMIN");
+			auth.requestMatchers("/darkuser").hasRole("DARK_ADMIN");
 			auth.requestMatchers("/admin").hasRole("ADMIN");
 			auth.requestMatchers("/user").hasRole("USER");
 			auth.anyRequest().authenticated();
@@ -40,8 +40,8 @@ public class SpringSecurityConfig {
 				.password(passwordEncoder().encode("admin"))
 				.roles("USER", "ADMIN").build();
 		UserDetails darkAdmin = User.builder()
-				.username("darkadmin")
-				.password(passwordEncoder().encode("darkadmin"))
+				.username("darkuser")
+				.password(passwordEncoder().encode("darkuser"))
 				.roles("USER", "DARK_ADMIN").build();
 		return new InMemoryUserDetailsManager(user, admin, darkAdmin);
 	}
