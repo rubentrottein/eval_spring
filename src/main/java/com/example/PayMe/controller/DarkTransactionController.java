@@ -28,7 +28,6 @@ public class DarkTransactionController {
 	@GetMapping("/darktransactions")
 	public String getDarkTransactionsPage(Model model) {
 		String userName = SecurityContextHolder.getContext().getAuthentication().getName();
-
 		model.addAttribute("transactions", transactionService.getTransactionsListByUserName(userName));
 		return "darkTransactionsPage";
 	}

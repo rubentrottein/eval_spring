@@ -65,6 +65,7 @@ public class UserController {
 	@GetMapping("/darkadmin")
 	public String getUsersDarkAdmin(Model model, RedirectAttributes ra){
 		model.addAttribute("users", userService.getAllUser());
+		model.addAttribute("message", "Bienvenue dans la D4RK zone");
 		return "darkAdminUsers";
 	}
 }

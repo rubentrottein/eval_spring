@@ -1,33 +1,41 @@
 *{
     margin:0;
     text-decoration: none;
-    font-size: 20px;
 }
 body{
-    background: radial-gradient(#094c00,#000 );
-    color: lime;
-    font-family: monospace;
+    background: url("https://picsum.photos/id/330/1980/1280") fixed;
+    background-size: cover;
+    font-family: "Trebuchet MS", Arial, "Times New Roman";
 }
 nav{
     position: fixed;
-    width: 100%;
-    min-height: 50%;
+    left:0;
+    top: 5em;
     display: flex;
     justify-content: space-between;
     gap: 1em;
 }
 h1{
     font-weight: 100;
-    font-size: 3rem;
-    color: orangered;
-    text-align: right;
+    font-size: 3em;
+    color: gold;
+    background: linear-gradient(to right, black, #00000000);
+    padding: .1em .5em;
 }
-nav a, a{
-    color: mediumvioletred;
-    padding: .4em;
-    outline: 1px darkviolet solid;
+nav a{
+    color: white;
+    padding: .5em;
+    margin: 1em;
+    outline: 1px white solid;
+    border-radius: 10px;
     display: block;
-    z-index: 1;
+    background: #11110066;
+    backdrop-filter: blur(15px);
+    text-align: center;
+    font-weight: 100;
+}
+.message{
+    display: none;
 }
 a[href="/darkadmin"]{
     color: crimson;
@@ -41,21 +49,11 @@ table, th, td {
 table{
     margin: 4em auto;
     width: 50%;
-    z-index: 5;
 }
 td{
     padding: 1em;
-    min-width: 10em;
+    width: 10em;
     text-align: center;
-}
-[type=button]{
-    margin: auto;
-    text-align: center;
-    padding: .5em 1em;
-    background: #00000055;
-    border: 1px solid crimson;
-    border-radius: 10px;
-    color: tomato;
 }
 .dark {
     background: black;
@@ -64,19 +62,28 @@ td{
 }
 
 .message{
-    display: block;
     height:1em;
     padding: 1em;
     outline: lime 2px solid;
     border-radius: 10px;
-    margin: auto;
+    margin: 1em;
     background: radial-gradient(black, #144514);
     text-align: center;
     color: greenyellow;
     font-family: "Courier New", monospace;
-    width: 90%;
 }
 
 table, .message{
     backdrop-filter: blur(15px);
+}
+
+main{
+    background: #eeeeee66;
+    backdrop-filter: blur(15px);
+    color: black;
+    width: 70%;
+    margin: 2em auto;
+    padding: 1em;
+    border-radius: 10px;
+    border: black 1px solid;
 }
